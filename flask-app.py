@@ -42,11 +42,33 @@ def get_data():
 
 @app.route('/directory')
 def view_directory():
-    return 'FIXME'
+    student_list = get_data()
+    return render_template('directory.html', students = student_list)
 
 @app.route('/directory/<username>')
 def view_student(username):
-    return 'FIXME'
+    student_list = get_data()
+    current_student = None
+    for i in range(0, len(student_list)):
+        if student_list[i].username == username:
+            current_student = student_list[i]
+            index = i
+            break
+
+    if index == 0:
+        previous_student = student_list[len(student_list)-1]
+        next_student = student_list[1]
+    elif index == len(student_list)-1:
+        previous_student = student_list[index - 1]
+        next_student = student_list[0]
+    else:
+        previous_student = student_list[index - 1]
+        next_student = student_list[index + 1]
+
+    return render_template('student.html', student = current_student, prev_student = previous_student, next_student = next_student)
+
+
+
 
 # DON'T TOUCH THE CODE BELOW THIS LINE
 
