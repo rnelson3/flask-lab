@@ -1,1 +1,16 @@
 h1 { color:#FF0000; }
+h3 { color:#ffb6c1;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 400%;
+    text-align: center
+}
+body { background-color: #add8e6;
+       border-style: dotted
+
+}
+p2 { font-family: Georgia, serif;
+}
+
+p1 { font-family: "Arial Black", Gadget, sans-serif;
+     font-size: 250%;
+}
